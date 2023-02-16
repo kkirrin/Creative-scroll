@@ -89,9 +89,15 @@ h1,h2,h3,h4,h5 {
 
 
 .gallery__horizontal {
+	padding: 0;
 	display: flex;
 	align-items: center;
+	/* will-change: transition; */
+	transition: opacity 2s;
+}
 
+.gallery__horizontal .panel:hover {
+	opacity: .9;
 }
 
 .gallery__horizontal > * {
