@@ -1,0 +1,132 @@
+/* Стандартные настройки сброса стилей */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Глобальные переменные */
+
+:root {
+	--index: calc(1vw + 1vh);
+	--color-header: #f4efec;
+	--color-text: #cdc6c3;
+
+	--gallery-gap: calc(var(--index)* 10);
+	--gallery-width: calc(var(--index) * 21);
+
+}
+
+/* Подключение шрифтов своих */
+@font-face {
+	font-family: raleway_c;
+	src: url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+	font-family: outfit_c;
+	src: url(../fonts/outfit-regular.woff2);
+}
+
+/* will-change */
+.content, .hero, .main-header, .gallery > * {
+	will-change: transform;
+}
+
+
+body {
+	background-image: url(../img/bg.jpg);
+	background-size: 50px;
+	color: #fafafa;
+	font-family: raleway_c;
+	overflow-x: hidden; /* Скрыть прокрутку */
+
+
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: outfit-c;
+}
+
+.hero {
+	z-index: -1;
+	width: calc(var(--index) * 40);
+	position: absolute;
+	left: 37vw;
+	top: 9vh;
+
+}
+
+.main-header {
+	height: 100vh;
+}
+
+.container {
+	padding: 0 8vw;
+}
+
+.main-title {
+	font-size: calc(var(--index) * 8);
+	position: absolute;
+	width: min-content;
+	bottom: 12vh;
+	line-height: .9;
+	
+}
+
+.gallery {
+	display: flex;
+	padding: calc(var(--index) * 8) 0 ;
+
+}
+
+
+.gallery > * {
+	flex: 1;
+	display: flex; /* Все элементы становятся flexaми, значит на них наклалываются свойства */
+	align-items: center; /* Центрируем по горизонтали */
+	flex-direction: column; /* Все что внутри будет выстраиваетсяя друг под другом */
+} 
+
+
+.gallery__horizontal {
+	display: flex;
+	align-items: center;
+
+}
+
+.gallery__horizontal > * {
+	margin: 1vh;
+}
+
+.gallery__item {
+	max-width: var(--gallery-width);
+	margin-bottom: var(--gallery-gap);
+	max-height: 180vh;
+	border-radius: 10px;
+}
+
+.gallery__left {
+	margin-top: calc(var(--gallery-gap) * .75);
+}
+
+.gallery__right .gallery__item {
+	margin-bottom: 0;
+	margin-top: var(--gallery-gap);
+}
+
+.text-block {
+	color: var(--color-text);
+	position: relative;
+}
+
+.text-block__h {
+	font-size: 2.4rem;
+	line-height: 2.4rem;
+	color: var(--color-header);
+	margin-bottom: 1.5rem;
+}
+.text-block__p {
+
+	line-height: 1.75;
+
+}
